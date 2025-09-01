@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: hsl(332, 86%, 64%);
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+body {
+  background-color: aqua;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* default (mobile/tablet): stack */
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  margin: auto;
+}
+
+.box {
+  height: 16vmin;
+  width: 16vmin;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  font-size: 8vmin;
+  background-color: #ffffc7;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.box:hover {
+  background-color: rgb(234, 225, 102);
+  transform: scale(1.05);
+}
+
+#reset-btn,
+#new-btn {
+  padding: 1rem;
+  font-size: 1.25rem;
+  color: #fff;
+  border-radius: 1rem;
+  border: none;
+}
+
+#reset-btn {
+  background-color: hwb(332 29% 5%);
+}
+
+#new-btn {
+  background-color: hsl(332, 87%, 62%);
+}
+
+#msg {
+  color: #d671f3;
+  font-size: 8vmin;
+}
+
+.msg-container {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+@keyframes dance {
+  0% { transform: rotate(0deg) scale(1); }
+  20% { transform: rotate(-10deg) scale(1.1); }
+  40% { transform: rotate(10deg) scale(1.1); }
+  60% { transform: rotate(-10deg) scale(1.1); }
+  80% { transform: rotate(10deg) scale(1.1); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.dance {
+  animation: dance 1s infinite;
+  color: gold;
+  text-shadow: 2px 2px 5px black;
+}
+
+.winner-box {
+  background-color: hsl(120, 84%, 70%) !important;
+  color: white !important;
+  animation: flash 0.6s alternate infinite;
+}
+
+@keyframes flash {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.x-player { color: orange; font-weight: bold; }
+.o-player { color: hsl(332, 99%, 58%); font-weight: bold; }
+
+.video-box {
+  margin-top: 20px;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-container {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.btn-container button {
+  margin: 0 0.5rem;
+}
+
+/* 📱 Tablet & Mobile (<= 768px) → stacked layout */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    padding: 0.6rem 1.5rem;
+  }
+  .game {
+    height: 70vmin;
+    width: 70vmin;
+  }
+  .box {
+    height: 18vmin;
+    width: 18vmin;
+    font-size: 6vmin;
+  }
+  #msg { font-size: 6vmin; }
+  #reset-btn, #new-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+/* 💻 Laptop/Desktop (>= 769px) → side-by-side layout */
+@media (min-width: 769px) {
+  .container {
+    flex-direction: row; 
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; 
+  }
+
+  .right-panel {
+    margin-top: 2rem; 
+  }
+}
