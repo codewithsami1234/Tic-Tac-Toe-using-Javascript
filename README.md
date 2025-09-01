@@ -38,7 +38,10 @@ Direct Link (click to view/download):
 - **JavaScript (ES6)**  
 
 ---
+## 🎮 Live Demo  
+👉 [Play the game here](https://codewithsami1234.github.io/Tic-Tac-Toe-using-Javascript/)  
 
+---
 ## ⚡ How to Play
 1. Clone this repository:
    ```bash
