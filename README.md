@@ -32,11 +32,6 @@ Direct Link (click to view/download):
 
 ---
 
-## 🎮 Live Demo  
-👉 [Play the game here](https://codewithsami1234.github.io/Tic-Tac-Toe-using-Javascript/)  
-
----
-
 ## 🛠️ Tech Stack
 - **HTML5**  
 - **CSS3** (Flexbox + Grid + Animations)  
